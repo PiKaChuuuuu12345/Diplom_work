@@ -22,14 +22,6 @@ type Category = {
   slug: string;
 };
 
-type PricingPlan = {
-  id: number;
-  name: string;
-  price: number;
-  features: string[];
-  isPopular: boolean;
-};
-
 export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [showFaq, setShowFaq] = useState<number | null>(null);
@@ -59,7 +51,7 @@ export default function ServicesPage() {
       description:
         "Профессиональный перевод договоров, соглашений, уставов и юридических документов",
       icon: "fas fa-balance-scale",
-      price: 900,
+      price: 600,
       detailedDescription:
         "Юридический перевод требует высокой точности и глубокого понимания правовой терминологии. Наши сертифицированные переводчики специализируются на юридических документах и гарантируют сохранение правового смысла в переводе.",
       features: [
@@ -76,7 +68,7 @@ export default function ServicesPage() {
       description:
         "Перевод технической документации, инструкций, руководств и спецификаций",
       icon: "fas fa-cogs",
-      price: 650,
+      price: 600,
       detailedDescription:
         "Технический перевод требует глубоких знаний в соответствующей отрасли. Наши технические переводчики имеют профильное образование и опыт работы в различных технических сферах, что обеспечивает точность перевода специализированной терминологии.",
       features: [
@@ -127,7 +119,7 @@ export default function ServicesPage() {
       description:
         "Творческий перевод рекламных текстов, брошюр, каталогов и маркетинговых кампаний",
       icon: "fas fa-bullhorn",
-      price: 750,
+      price: 800,
       detailedDescription:
         "Перевод маркетинговых материалов требует не только лингвистических знаний, но и понимания принципов маркетинга. Наши специалисты сохраняют эмоциональное воздействие оригинального текста, адаптируя его под культурные особенности целевой аудитории.",
       features: [
@@ -144,7 +136,7 @@ export default function ServicesPage() {
       description:
         "Официальные переводы документов с нотариальным заверением для использования в государственных органах",
       icon: "fas fa-stamp",
-      price: 1200,
+      price: 800,
       detailedDescription:
         "Нотариальный перевод необходим для официальных документов, используемых в государственных органах и учреждениях. Мы обеспечиваем точный перевод с соблюдением всех формальностей и предоставляем услуги нотариального заверения.",
       features: [
@@ -161,7 +153,7 @@ export default function ServicesPage() {
       description:
         "Творческий перевод литературных произведений, сохраняющий авторский стиль и эмоциональное воздействие",
       icon: "fas fa-book",
-      price: 800,
+      price: 900,
       detailedDescription:
         "Художественный перевод – это искусство передачи не только смысла, но и стиля, атмосферы и эмоционального воздействия оригинального произведения. Наши литературные переводчики обладают исключительным чувством языка и творческим подходом.",
       features: [
@@ -182,52 +174,6 @@ export default function ServicesPage() {
     { id: 3, name: "Технические", slug: "technical" },
     { id: 4, name: "Медицинские", slug: "medical" },
     { id: 5, name: "Веб и IT", slug: "web" },
-  ];
-
-  // Тарифные планы
-  const pricingPlans: PricingPlan[] = [
-    {
-      id: 1,
-      name: "Базовый",
-      price: 490,
-      features: [
-        "Стандартный перевод текста",
-        "До 10 страниц",
-        "Срок от 3 рабочих дней",
-        "Один раунд правок",
-        "Базовая проверка качества",
-      ],
-      isPopular: false,
-    },
-    {
-      id: 2,
-      name: "Стандартный",
-      price: 790,
-      features: [
-        "Профессиональный перевод",
-        "До 30 страниц",
-        "Срок от 2 рабочих дней",
-        "Два раунда правок",
-        "Расширенная проверка качества",
-        "Глоссарий терминов",
-      ],
-      isPopular: true,
-    },
-    {
-      id: 3,
-      name: "Премиум",
-      price: 1290,
-      features: [
-        "Перевод экспертного уровня",
-        "Неограниченное количество страниц",
-        "Срок от 1 рабочего дня",
-        "Неограниченные правки",
-        "Многоуровневая проверка качества",
-        "Персональный менеджер проекта",
-        "Адаптация под целевую аудиторию",
-      ],
-      isPopular: false,
-    },
   ];
 
   // Вопросы часто задаваемые
@@ -311,7 +257,7 @@ export default function ServicesPage() {
                 href="#pricing"
                 className="border border-white text-white font-medium px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
               >
-                Посмотреть тарифы
+                Посмотреть способы оплаты
               </Link>
             </div>
           </div>
@@ -479,90 +425,248 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Тарифы */}
+      {/* Способы оплаты */}
       <section id="pricing" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Тарифные планы</h2>
+            <h2 className="text-3xl font-bold mb-4">Способы оплаты</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Выберите подходящий тарифный план в соответствии с вашими
-              потребностями и бюджетом.
+              Мы предлагаем удобные и безопасные способы оплаты для наших услуг
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.id}
-                className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg border ${
-                  plan.isPopular
-                    ? "border-blue-500 relative transform hover:-translate-y-2"
-                    : "border-transparent hover:-translate-y-1"
-                }`}
-              >
-                {plan.isPopular && (
-                  <div className="bg-blue-500 text-white text-sm font-semibold py-1 text-center">
-                    Самый популярный
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-4">{plan.name}</h3>
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold text-blue-600">
-                      {plan.price} сом
-                    </span>
-                    <span className="text-gray-500 ml-1">/ страница</span>
-                  </div>
-
-                  <ul className="mb-6 space-y-3">
-                    {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg
-                          className={`w-5 h-5 mr-2 mt-0.5 flex-shrink-0 ${
-                            plan.isPopular ? "text-blue-500" : "text-green-500"
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href="/contact"
-                    className={`w-full block text-center py-3 px-4 rounded font-medium transition-colors ${
-                      plan.isPopular
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    }`}
-                  >
-                    Выбрать тариф
-                  </Link>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg border border-transparent hover:-translate-y-1">
+              <div className="p-6">
+                <div className="text-3xl text-blue-600 mb-4">
+                  <i className="fas fa-credit-card"></i>
                 </div>
+                <h3 className="text-xl font-bold mb-4">Банковской картой</h3>
+                <ul className="mb-6 space-y-3">
+                  <li className="flex items-start">
+                    <svg
+                      className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">Visa</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">Элкарт</span>
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg border border-blue-500 relative transform hover:-translate-y-2">
+              <div className="bg-blue-500 text-white text-sm font-semibold py-1 text-center">
+                Самый популярный
+              </div>
+              <div className="p-6">
+                <div className="text-3xl text-blue-600 mb-4">
+                  <i className="fas fa-mobile-alt"></i>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Мобильный банкинг</h3>
+                <ul className="mb-6 space-y-3">
+                  <li className="flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 mr-2 flex-shrink-0 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/Payment/mbank.svg"
+                        alt="MBank"
+                        width={60}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 mr-2 flex-shrink-0 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/Payment/dengi.svg"
+                        alt="O!Деньги"
+                        width={60}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 mr-2 flex-shrink-0 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/Payment/balance.svg"
+                        alt="Balance KG"
+                        width={60}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 mr-2 flex-shrink-0 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/Payment/optima.svg"
+                        alt="Optima"
+                        width={60}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 mr-2 flex-shrink-0 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/Payment/elsom.png"
+                        alt="Elsom"
+                        width={60}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg border border-transparent hover:-translate-y-1">
+              <div className="p-6">
+                <div className="text-3xl text-blue-600 mb-4">
+                  <i className="fas fa-money-bill-wave"></i>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Наличными</h3>
+                <ul className="mb-6 space-y-3">
+                  <li className="flex items-start">
+                    <svg
+                      className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">В офисе компании</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">Курьеру при доставке</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-8 text-gray-600">
             <p>
-              Нужны индивидуальные условия?{" "}
+              Нужна помощь с оплатой?{" "}
               <Link
                 href="/contact"
                 className="text-blue-600 hover:underline underline-offset-3"
               >
                 Свяжитесь с нами
               </Link>{" "}
-              для получения персонального предложения.
+              для получения консультации.
             </p>
           </div>
         </div>
@@ -813,9 +917,9 @@ export default function ServicesPage() {
                   <i className="fa-solid fa-star"></i>
                   <i className="fa-solid fa-star"></i>
                   <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star"></i>
                 </div>
-                <span className="ml-2 text-gray-600">5.0</span>
+                <span className="ml-2 text-gray-600">4.5</span>
               </div>
               <p className="text-gray-600 mb-4">
                 &quot;Сотрудники и в действительности работают быстро. И что
@@ -842,29 +946,6 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
-
-          {/* <div className="text-center mt-8">
-            <Link
-              href="/testimonials"
-              className="text-blue-600 font-medium inline-flex items-center hover:underline underline-offset-4"
-            >
-              Посмотреть все отзывы
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </div> */}
         </div>
       </section>
 
