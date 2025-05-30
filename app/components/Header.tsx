@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-blue-600">
-        Etalon
+          Etalon
         </Link>
 
         {/* Мобильная навигация */}
@@ -49,25 +51,39 @@ export default function Header() {
         <nav className="hidden lg:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
+            className={`${
+              pathname === "/" ? "text-blue-600 font-medium" : "text-gray-700"
+            } hover:text-blue-600 transition-colors`}
           >
             Главная
           </Link>
           <Link
             href="/services"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
+            className={`${
+              pathname === "/services"
+                ? "text-blue-600 font-medium"
+                : "text-gray-700"
+            } hover:text-blue-600 transition-colors`}
           >
             Услуги
           </Link>
           <Link
             href="/about"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
+            className={`${
+              pathname === "/about"
+                ? "text-blue-600 font-medium"
+                : "text-gray-700"
+            } hover:text-blue-600 transition-colors`}
           >
             О нас
           </Link>
           <Link
             href="/contact"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
+            className={`${
+              pathname === "/contact"
+                ? "text-blue-600 font-medium"
+                : "text-gray-700"
+            } hover:text-blue-600 transition-colors`}
           >
             Контакты
           </Link>
@@ -83,25 +99,39 @@ export default function Header() {
           <nav className="flex flex-col space-y-4">
             <Link
               href="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className={`${
+                pathname === "/" ? "text-blue-600 font-medium" : "text-gray-700"
+              } hover:text-blue-600 transition-colors`}
             >
               Главная
             </Link>
             <Link
               href="/services"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className={`${
+                pathname === "/services"
+                  ? "text-blue-600 font-medium"
+                  : "text-gray-700"
+              } hover:text-blue-600 transition-colors`}
             >
               Услуги
             </Link>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className={`${
+                pathname === "/about"
+                  ? "text-blue-600 font-medium"
+                  : "text-gray-700"
+              } hover:text-blue-600 transition-colors`}
             >
               О нас
             </Link>
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className={`${
+                pathname === "/contact"
+                  ? "text-blue-600 font-medium"
+                  : "text-gray-700"
+              } hover:text-blue-600 transition-colors`}
             >
               Контакты
             </Link>
