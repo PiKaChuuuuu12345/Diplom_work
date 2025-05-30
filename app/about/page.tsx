@@ -174,7 +174,7 @@ export default function About() {
       position: "Генеральный директор",
       description:
         "Основатель компании с 15-летним опытом в сфере переводов. Специалист по юридическому и бизнес-переводу.",
-      image: "/images/Team-img/team-1.jpg",
+      image: "",
     },
     {
       id: 2,
@@ -182,7 +182,7 @@ export default function About() {
       position: "Руководитель отдела технических переводов",
       description:
         "Эксперт в области технического перевода с опытом работы более 10 лет. Специализируется на IT и инженерной документации.",
-      image: "/images/Team-img/team-2.jpg",
+      image: "",
     },
     {
       id: 3,
@@ -190,7 +190,7 @@ export default function About() {
       position: "Главный редактор",
       description:
         "Филолог с 12-летним стажем. Отвечает за качество и стилистическую точность всех выполняемых переводов.",
-      image: "/images/Team-img/team-3.jpg",
+      image: "",
     },
   ];
 
