@@ -6,28 +6,31 @@ export default function Contact() {
   const contactInfo = {
     email: "info@etalon.kg",
     phone: "+996557590557",
+    phone2: "+996500590557",
+    phone3: "+996773590557",
     address: "г. Бишкек, ​Улица Касыма Тыныстанова, 231",
     workHours: "Пн-Пт: 10:00 - 17:00",
+    workHours2: "Сб-Вс: Выходной",
     socialMedia: [
       {
         name: "Facebook",
-        url: "#",
-        icon: "fa-brands fa-facebook",
+        url: "",
+        icon: "fa-facebook",
       },
       {
         name: "Instagram",
-        url: "#",
-        icon: "fa-brands fa-instagram",
+        url: "",
+        icon: "fa-instagram",
       },
       {
         name: "LinkedIn",
-        url: "#",
-        icon: "fa-brands fa-linkedin",
+        url: "",
+        icon: "fa-linkedin",
       },
       {
         name: "WhatsApp",
         url: "tel: +996 557-590-557",
-        icon: "fa-brands fa-whatsapp",
+        icon: "fa-whatsapp",
       },
     ],
   };
@@ -112,20 +115,30 @@ export default function Contact() {
       {/* Contact information */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <i className="fa-solid fa-location-dot"></i>
+                  <i className="fas fa-location-dot"></i>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Адрес</h3>
                 <p className="text-gray-600">{contactInfo.address}</p>
-                <p className="text-gray-600 mt-2">{contactInfo.workHours}</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <i className="fa-solid fa-phone"></i>
+                  <i className="fa-solid fa-clock"></i>
+                </div>
+                <h3 className="font-bold text-lg mb-2">График работы</h3>
+                <p className="text-gray-600 font-bold mt-2">
+                  {contactInfo.workHours}
+                </p>
+                <p className="text-gray-600 mt-2">{contactInfo.workHours2}</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                  <i className="fas fa-phone"></i>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Телефон</h3>
                 <a
@@ -134,12 +147,17 @@ export default function Contact() {
                 >
                   {contactInfo.phone}
                 </a>
-                <p className="text-gray-600 mt-2">Пн-Пт с 9:00 до 19:00</p>
+                <div className="text-blue-600 cursor-pointer hover:underline underline-offset-3">
+                  {contactInfo.phone2}
+                </div>
+                <div className="text-blue-600 cursor-pointer hover:underline underline-offset-3">
+                  {contactInfo.phone3}
+                </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <i className="fa-solid fa-envelope"></i>
+                  <i className="fas fa-envelope"></i>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Email</h3>
                 <a
@@ -164,7 +182,7 @@ export default function Contact() {
                     className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                     aria-label={social.name}
                   >
-                    <i className={social.icon}></i>
+                    <i className={`fab ${social.icon}`}></i>
                   </a>
                 ))}
               </div>
