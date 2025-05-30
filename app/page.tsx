@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import heroPic from "../public/images/about-us.jpg";
 import teamPic from "../public/images/team.jpg";
-import testimonialFirstPic from "../public/images/Testimonial-img/testimonial-1.jpg";
-import testimonialSecondPic from "../public/images/Testimonial-img/testimonial-2.jpg";
-import testimonialThirdPic from "../public/images/Testimonial-img/testimonial-3.jpg";
+import testimonialFirstPic from "../public/images/Testimonial-img/testimonial-7.jpg";
+import testimonialSecondPic from "../public/images/Testimonial-img/testimonial-4.jpg";
+import testimonialThirdPic from "../public/images/Testimonial-img/testimonial-5.jpg";
 import ServiceCard from "./components/ServiceCard";
 import { Service, Testimonial } from "./types";
 import TestimonialCard from "./components/TestimonialCard";
@@ -56,23 +56,20 @@ export default function Home() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Руслан Асылбеков",
-      company: 'ООО "VR Games"',
-      text: "Обратились в Эталон для перевода технической документации на немецкий язык. Результат превзошел ожидания – точный перевод, соблюдение всех технических терминов и сжатые сроки.",
+      name: "Аскар Жумагулов",
+      text: "Давно работаем, качественно и в быстрые сроки выполняет работу 👍",
       image: testimonialFirstPic,
     },
     {
       id: 2,
-      name: "Аман Канатбеков",
-      company: 'АО "ЮрКонсалт"',
-      text: "Сотрудничаем с Эталон уже более 3 лет. Всегда высокое качество юридических переводов, внимание к деталям и соблюдение конфиденциальности.",
+      name: "Aisalkyn Orozobaeva",
+      text: "Компания дружелюбная😊 Понравилось у них. Перевод качественный, главное очень быстро.",
       image: testimonialSecondPic,
     },
     {
       id: 3,
-      name: "Байтенир Шарафутдинов",
-      company: "МедТех Групп",
-      text: "Благодарим команду переводчиков за профессиональный подход к переводу медицинской документации. Особенно ценим точность и знание специфической терминологии.",
+      name: "Диас Диасов",
+      text: "Хочу поблагодарить агентство языковых переводов 'Эталон' за их оперативность и профессионализм. Очень помогли быстро перевести договора и уставы нашей компании с русского на английский и заверить нотариально.",
       image: testimonialThirdPic,
     },
   ];
@@ -93,7 +90,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link
-                  href="/contact"
+                  href="tel:+996557590557"
                   className="bg-white text-blue-600 font-medium px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition-colors text-center"
                 >
                   Заказать перевод
