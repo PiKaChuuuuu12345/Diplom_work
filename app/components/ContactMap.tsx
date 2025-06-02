@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
-    DG: any;
+    DG: unknown;
   }
 }
 
@@ -29,16 +29,14 @@ const ContactMap = () => {
 
     function initializeMap() {
       if (window.DG) {
-        window.DG.then(function () {
-          if (mapInstanceRef.current) {
-            return;
-          }
+        (window.DG as any).then(function () {
+          if (mapInstanceRef.current) return;
 
           const container = document.getElementById("dgis-map");
 
           if (container && container.childElementCount === 0) {
-            const map = window.DG.map("dgis-map", {
-              center: [42.87551961902157, 74.60950714920719], // Бишкек
+            const map = (window.DG as any).map("dgis-map", {
+              center: [42.87551961902157, 74.60950714920719],
               zoom: 17,
               fullscreenControl: false,
               zoomControl: true,
@@ -46,7 +44,8 @@ const ContactMap = () => {
 
             mapInstanceRef.current = map;
 
-            window.DG.marker([42.87551961902157, 74.60950714920719])
+            (window.DG as any)
+              .marker([42.87551961902157, 74.60950714920719])
               .addTo(map)
               .bindPopup(
                 "Бюро переводов Эталон<br/>ул. К.Тыныстанова, 231, 2 этаж"
