@@ -209,7 +209,7 @@ export default function Home() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span>10+ языков перевода</span>
+                  <span>40+ языков перевода</span>
                 </div>
                 <div className="flex items-center">
                   <svg
