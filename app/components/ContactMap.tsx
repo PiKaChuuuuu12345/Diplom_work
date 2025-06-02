@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const ContactMap = () => {
   const mapInstanceRef = useRef(null);
   const containerRef = useRef(null);
-  const scriptRef = useRef(null);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
 
   useEffect(() => {
     if (!document.querySelector('script[src*="maps.api.2gis.ru"]')) {
