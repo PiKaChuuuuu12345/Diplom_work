@@ -2,6 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
+declare global {
+  interface Window {
+    DG: any;
+  }
+}
+
 const ContactMap = () => {
   const mapInstanceRef = useRef(null);
   const containerRef = useRef(null);
@@ -32,7 +38,7 @@ const ContactMap = () => {
 
           if (container && container.childElementCount === 0) {
             const map = window.DG.map("dgis-map", {
-              center: [42.87551961902157, 74.60950714920719],
+              center: [42.87551961902157, 74.60950714920719], // Бишкек
               zoom: 17,
               fullscreenControl: false,
               zoomControl: true,
